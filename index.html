@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Instagram</title>
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+        <link rel="stylesheet" href="style.css">
+        <link rel="icon" href="images/favicon.png">
+        
+    </head>
+    <body  onload="alterImage(1)">
+        <div class="instagram-wrapper">
+            <div class="instagram-phone">
+                <img id="bg-celular" src="./images/insta-celular.png" alt="celular">
+                <img id="gallery"  src="./images/slide-1.jpg" alt="slide">
+            </div>
+            <div class="instagram-continue">
+                <div class="group">
+                    <div class="block">
+                        <img src="./images/instagram-logo.png" class="instagram-logo" alt="instagram logo">
+                        <input type="text" placeholder="Telefone, nome de usuário ou e-mail" />
+                        <input type="password" placeholder="Senha" />
+                        <button class="instagram-login">Entrar</button>
+                        <div id="txt"></div>
+                    </div>
+                    <div class="separator">
+                        <hr>
+                        <span>OU</span>
+                        <hr>
+                    </div>
+                    <div class="section">
+                        <a href="#" class="instagram-link">
+                            <i class="fa fa-facebook-square fa-1x"></i> Entrar com o Facebook
+                        </a>
+                        <a href="#" class="instagram-link">Esqueceu a senha?</a>
+                    </div>                
+                </div>
+                <div class="footer">
+                    <p class="not-account">Não tem uma conta?
+                        <span class="link-blue">Cadastre-se</span>
+                    </p>
+                </div>
+                <div class="get-the-app">
+                    <p class="get-app">Obtenha o aplicativo.</p>
+                    <div class="download">
+                        <a href="#" class="app-download"></a>
+                        <a href="#" class="app-download"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script>
+            function alterImage(posicao) {
+                const img = document.querySelector("#gallery");
+                img.src = "./images/slide-"+posicao+".jpg";
+
+                if(posicao >= 4){
+                    posicao = 1;
+                }
+                else{
+                    posicao++;
+                }
+                
+                let t = setTimeout(function(){ alterImage(posicao) }, 3000);
+            }
+        </script>
+    </body>
+</html>
